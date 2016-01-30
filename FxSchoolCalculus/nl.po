@@ -1,0 +1,65 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-01-30 21:26+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+
+#: ../../Program.cs:240 Program.cs:240 Program.cs:245
+#, csharp-format
+msgid "{0}  => Answer: "
+msgstr "{0}  => Antwoord: "
+
+#: ../../Program.cs:301 Program.cs:305 Program.cs:310
+msgid "FxSchool 1.0"
+msgstr ""
+
+#: ../../Program.cs:302 Program.cs:306 Program.cs:311
+msgid "Configuration: "
+msgstr "Configuratie:"
+
+#: Program.cs:272 Program.cs:277
+msgid "STOP!"
+msgstr "STOP!"
+
+#: Program.cs:277 Program.cs:282
+msgid "RIGHT!"
+msgstr "JUIST!"
+
+#: Program.cs:281 Program.cs:286
+#, csharp-format
+msgid "WRONG! The correct answer was {0}"
+msgstr "FOUT! Het juiste antwoord was {0}"
+
+#: Program.cs:285 Program.cs:290
+msgid "WRONG!"
+msgstr "FOUT!"
+
+#: Program.cs:294 Program.cs:299
+#, csharp-format
+msgid "Your score is now {0} / {1}"
+msgstr "Je score is nu {0} / {1}"
+
+#: Program.cs:331 Program.cs:336
+#, csharp-format
+msgid "You made {0} mistake, which we will now repeat:"
+msgid_plural "You made {0} mistakes, which we will now repeat:"
+msgstr[0] "Je hebt {0} fout gemaakt, deze wordt nu herhaald:"
+msgstr[1] "Je hebt {0} fouten gemaakt, deze worden nu herhaald:"
+
+#: Program.cs:348 Program.cs:353
+msgid "No mistakes!"
+msgstr "Geen fouten!"
