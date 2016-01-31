@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-01-31 19:26+0100\n"
+"POT-Creation-Date: 2016-01-31 20:14+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -19,82 +19,107 @@ msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 
 #: ../../Program.cs:240 Program.cs:240 Program.cs:245 Program.cs:249
+#: Program.cs:274
 #, csharp-format
 msgid "{0}  => Answer: "
 msgstr "{0}  => Antwoord: "
 
 #: ../../Program.cs:301 Program.cs:305 Program.cs:310 Program.cs:314
-#: Program.cs:317
+#: Program.cs:317 Program.cs:342
 msgid "FxSchool 1.0"
 msgstr ""
 
 #: ../../Program.cs:302 Program.cs:306 Program.cs:311 Program.cs:315
-#: Program.cs:318
+#: Program.cs:318 Program.cs:343 Program.cs:352
 msgid "Configuration: "
 msgstr "Configuratie:"
 
-#: Program.cs:272 Program.cs:277 Program.cs:281
+#: Program.cs:272 Program.cs:277 Program.cs:281 Program.cs:306
 msgid "STOP!"
 msgstr "STOP!"
 
-#: Program.cs:277 Program.cs:282 Program.cs:286
+#: Program.cs:277 Program.cs:282 Program.cs:286 Program.cs:311
 msgid "RIGHT!"
 msgstr "JUIST!"
 
-#: Program.cs:281 Program.cs:286 Program.cs:290
+#: Program.cs:281 Program.cs:286 Program.cs:290 Program.cs:315
 #, csharp-format
 msgid "WRONG! The correct answer was {0}"
 msgstr "FOUT! Het juiste antwoord was {0}"
 
-#: Program.cs:285 Program.cs:290 Program.cs:294
+#: Program.cs:285 Program.cs:290 Program.cs:294 Program.cs:319
 msgid "WRONG!"
 msgstr "FOUT!"
 
-#: Program.cs:294 Program.cs:299 Program.cs:303
+#: Program.cs:294 Program.cs:299 Program.cs:303 Program.cs:328
 #, csharp-format
 msgid "Your score is now {0} / {1}"
 msgstr "Je score is nu {0} / {1}"
 
-#: Program.cs:331 Program.cs:336 Program.cs:339
+#: Program.cs:331 Program.cs:336 Program.cs:339 Program.cs:368 Program.cs:377
 #, csharp-format
 msgid "You made {0} mistake, which we will now repeat:"
 msgid_plural "You made {0} mistakes, which we will now repeat:"
 msgstr[0] "Je hebt {0} fout gemaakt, deze wordt nu herhaald:"
 msgstr[1] "Je hebt {0} fouten gemaakt, deze worden nu herhaald:"
 
-#: Program.cs:348 Program.cs:353 Program.cs:356
+#: Program.cs:348 Program.cs:353 Program.cs:356 Program.cs:385 Program.cs:394
 msgid "No mistakes!"
 msgstr "Geen fouten!"
 
-#: Program.cs:316 Program.cs:319
+#: Program.cs:316 Program.cs:319 Program.cs:344 Program.cs:353
 #, csharp-format
 msgid "  * Attempts:                {0}"
 msgstr "  * Pogingen:                      {0}"
 
-#: Program.cs:317 Program.cs:320
+#: Program.cs:317 Program.cs:320 Program.cs:349 Program.cs:358
 #, csharp-format
 msgid "  * Multiply/divide maximum: {0}"
 msgstr "  * Vermenigvuldig/deling maximum: {0}"
 
-#: Program.cs:318 Program.cs:321
+#: Program.cs:318 Program.cs:321 Program.cs:350 Program.cs:359
 #, csharp-format
 msgid "  * Multiply/divide tables:  {0}"
 msgstr "  * Vermenigvuldig/deling tafels:  {0}"
 
-#: Program.cs:319 Program.cs:322
+#: Program.cs:319 Program.cs:322 Program.cs:351 Program.cs:360
 #, csharp-format
 msgid "  * Add/Subtract maximum:    {0}"
 msgstr "  * Optellen/aftrekken maximum:    {0}"
 
-#: Program.cs:320 Program.cs:323
+#: Program.cs:320 Program.cs:323 Program.cs:352 Program.cs:361
 #, csharp-format
 msgid "  * Benfold's-distribution:  {0}"
 msgstr "  * Benfolds-distributie:          {0}"
 
-#: Program.cs:314
+#: Program.cs:345 Program.cs:354
+#, csharp-format
+msgid "  * Add allowed:             {0}"
+msgstr "  * Optellen oefenen               {0}"
+
+#: Program.cs:346 Program.cs:355
+#, csharp-format
+msgid "  * Subtract allowed:        {0}"
+msgstr "  * Aftrekken oefenen              {0}"
+
+#: Program.cs:347 Program.cs:356
+#, csharp-format
+msgid "  * Multiply allowed:        {0}"
+msgstr "  * Vermenigvuldigen oefenen       {0}"
+
+#: Program.cs:348 Program.cs:357
+#, csharp-format
+msgid "  * Divide allowed:          {0}"
+msgstr "  * Deling oefenen                 {0}"
+
+#: Program.cs:314 Program.cs:339
 msgid "yes"
 msgstr "ja"
 
-#: Program.cs:315
+#: Program.cs:315 Program.cs:340
 msgid "no"
 msgstr "nee"
+
+#: Program.cs:345
+msgid "No exercise is allowed in the configuration.  Allowing all."
+msgstr "Geen enkele oefening is toegelaten volgens de configuratie. Dit wordt genegeerd, en alle oefeningen worden toegelaten."

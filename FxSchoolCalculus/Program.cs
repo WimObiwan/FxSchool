@@ -15,6 +15,10 @@ namespace Tafels
 	{
 		// Configuration
 		static int attempts = 3;
+		static bool allowAdd = true;
+		static bool allowSubtract = true;
+		static bool allowMultiply = true;
+		static bool allowDivide = true;
 		static int multiplicationMaximum = 10;
 		static int addMaximum = 100;
 		static int[] multiplicationTables = new int[] { 0, 1, 2, 3, 4, 5, /*6, 7, 8, 9,*/ 10 };
@@ -74,6 +78,10 @@ namespace Tafels
 		static void ReadConfiguration ()
 		{
 			attempts = ReadConfiguration ("attempts", attempts);
+			allowAdd = ReadConfiguration ("allowAdd", allowAdd);
+			allowSubtract = ReadConfiguration ("allowSubtract", allowSubtract);
+			allowMultiply = ReadConfiguration ("allowMultiply", allowMultiply);
+			allowDivide = ReadConfiguration ("allowDivide", allowDivide);
 			multiplicationMaximum = ReadConfiguration ("multiplicationMaximum", multiplicationMaximum);
 			addMaximum = ReadConfiguration ("addMaximum", addMaximum);
 			multiplicationTables = ReadConfiguration ("multiplicationTables", multiplicationTables);
@@ -180,18 +188,38 @@ namespace Tafels
 			char oper;
 			ValidQuestions validQuestions;
 
+			const int PossibilityAdd = 0;
+			const int PossibilitySubtract = 1;
+			const int PossibilityMultiply = 2;
+			const int PossibilityDivide = 3;
+
+			List<int> possibilities = new List<int> ();
+			if (allowAdd)
+				possibilities.Add (PossibilityAdd);
+			if (allowSubtract)
+				possibilities.Add (PossibilitySubtract);
+			if (allowMultiply)
+				possibilities.Add (PossibilityMultiply);
+			if (allowDivide)
+				possibilities.Add (PossibilityDivide);
+
+			if (possibilities.Count == 0)
+				throw new ApplicationException ();
+
+			int possibility = possibilities [random.Next (possibilities.Count)];
+
 			GenerateExerciseHandler generateExercise;
-			switch (random.Next (4)) {
-			case 0: // Add
+			switch (possibility) {
+			case PossibilityAdd:
 				generateExercise = GenerateExerciseAdd;
 				break;
-			case 1: // Subtract
+			case PossibilitySubtract:
 				generateExercise = GenerateExerciseSubtract;
 				break;
-			case 2: // multiply
+			case PossibilityMultiply:
 				generateExercise = GenerateExerciseMultiply;
 				break;
-			case 3: // Divide
+			case PossibilityDivide:
 				generateExercise = GenerateExerciseDivide;
 				break;
 			default:
@@ -312,8 +340,21 @@ namespace Tafels
 			string no = Catalog.GetString ("no");
 
 			Console.WriteLine (Catalog.GetString ("FxSchool 1.0"));
+
+			if ((allowAdd || allowSubtract || allowMultiply || allowDivide) == false) {
+				Console.WriteLine (Catalog.GetString ("No exercise is allowed in the configuration.  Allowing all."));
+				allowAdd = true;
+				allowSubtract = true;
+				allowMultiply = true;
+				allowDivide = true;
+			}
+				
 			Console.WriteLine (Catalog.GetString ("Configuration: "));
 			Console.WriteLine (Catalog.GetString ("  * Attempts:                {0}"), attempts);
+			Console.WriteLine (Catalog.GetString ("  * Add allowed:             {0}"), allowAdd ? yes : no);
+			Console.WriteLine (Catalog.GetString ("  * Subtract allowed:        {0}"), allowSubtract ? yes : no);
+			Console.WriteLine (Catalog.GetString ("  * Multiply allowed:        {0}"), allowMultiply ? yes : no);
+			Console.WriteLine (Catalog.GetString ("  * Divide allowed:          {0}"), allowDivide ? yes : no);
 			Console.WriteLine (Catalog.GetString ("  * Multiply/divide maximum: {0}"), multiplicationMaximum);
 			Console.WriteLine (Catalog.GetString ("  * Multiply/divide tables:  {0}"), string.Join (", ", multiplicationTables));
 			Console.WriteLine (Catalog.GetString ("  * Add/Subtract maximum:    {0}"), addMaximum);
