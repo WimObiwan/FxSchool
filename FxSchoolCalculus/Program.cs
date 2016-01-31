@@ -339,7 +339,9 @@ namespace Tafels
 			string yes = Catalog.GetString ("yes");
 			string no = Catalog.GetString ("no");
 
-			Console.WriteLine (Catalog.GetString ("FxSchool 1.0"));
+			Console.WriteLine (Catalog.GetString ("FxSchoolCalculus 1.0"));
+			Console.WriteLine ("(c) Copyright 2016 Fox Innovations / Wim Devos");
+			Console.WriteLine ("==============================================================================");
 
 			if ((allowAdd || allowSubtract || allowMultiply || allowDivide) == false) {
 				Console.WriteLine (Catalog.GetString ("No exercise is allowed in the configuration.  Allowing all."));
@@ -359,6 +361,7 @@ namespace Tafels
 			Console.WriteLine (Catalog.GetString ("  * Multiply/divide tables:  {0}"), string.Join (", ", multiplicationTables));
 			Console.WriteLine (Catalog.GetString ("  * Add/Subtract maximum:    {0}"), addMaximum);
 			Console.WriteLine (Catalog.GetString ("  * Benfold's-distribution:  {0}"), benfoldsDistribution ? yes : no);
+			Console.WriteLine ("==============================================================================");
 
 			bool stop = false;
 			do {
