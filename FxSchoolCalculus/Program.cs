@@ -308,17 +308,16 @@ namespace Tafels
 
 			Catalog.Init ("FxSchool", "./locale");
 
+			string yes = Catalog.GetString ("yes");
+			string no = Catalog.GetString ("no");
+
 			Console.WriteLine (Catalog.GetString ("FxSchool 1.0"));
 			Console.WriteLine (Catalog.GetString ("Configuration: "));
-			//	Console.WriteLine (Catalog.GetString("Configuration: "),
-
-			//	string.Join (", ", multiplicationTables));
-
-			//static int attempts = 3;
-			//static int multiplicationMaximum = 10;
-			//static int addMaximum = 100;
-			//static int[] multiplicationTables = new int[] { 0, 1, 2, 3, 4, 5, /*6, 7, 8, 9,*/ 10 };
-			//static bool benfoldsDistribution = false;
+			Console.WriteLine (Catalog.GetString ("  * Attempts:                {0}"), attempts);
+			Console.WriteLine (Catalog.GetString ("  * Multiply/divide maximum: {0}"), multiplicationMaximum);
+			Console.WriteLine (Catalog.GetString ("  * Multiply/divide tables:  {0}"), string.Join (", ", multiplicationTables));
+			Console.WriteLine (Catalog.GetString ("  * Add/Subtract maximum:    {0}"), addMaximum);
+			Console.WriteLine (Catalog.GetString ("  * Benfold's-distribution:  {0}"), benfoldsDistribution ? yes : no);
 
 			bool stop = false;
 			do {
