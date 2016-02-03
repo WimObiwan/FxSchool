@@ -374,7 +374,7 @@ namespace Tafels
 
 			stop = false;
 			while (mistakes.Count > 0 && !stop) {
-				Console.WriteLine ();
+				Console.Clear ();
 				Console.WriteLine (
 					Catalog.GetPluralString (
 						"You made {0} mistake, which we will now repeat:",
