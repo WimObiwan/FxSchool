@@ -1,7 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
-Project("{9344BDBB-3E7F-41FC-A0DD-8665D75EE146}") = "FxSchoolCalculus", "FxSchoolCalculus\FxSchoolCalculus.csproj", "{AA6FD6F8-F401-4C10-85B8-2FAF745476A5}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FxSchoolCalculus", "FxSchoolCalculus\FxSchoolCalculus.csproj", "{AA6FD6F8-F401-4C10-85B8-2FAF745476A5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FxSchoolDictate", "FxSchoolDictate\FxSchoolDictate.csproj", "{D0EE4736-BB3B-475C-A8E5-0CD544D8DA8C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -13,5 +15,9 @@ Global
 		{AA6FD6F8-F401-4C10-85B8-2FAF745476A5}.Debug|x86.Build.0 = Debug|x86
 		{AA6FD6F8-F401-4C10-85B8-2FAF745476A5}.Release|x86.ActiveCfg = Release|x86
 		{AA6FD6F8-F401-4C10-85B8-2FAF745476A5}.Release|x86.Build.0 = Release|x86
+		{D0EE4736-BB3B-475C-A8E5-0CD544D8DA8C}.Debug|x86.ActiveCfg = Debug|x86
+		{D0EE4736-BB3B-475C-A8E5-0CD544D8DA8C}.Debug|x86.Build.0 = Debug|x86
+		{D0EE4736-BB3B-475C-A8E5-0CD544D8DA8C}.Release|x86.ActiveCfg = Release|x86
+		{D0EE4736-BB3B-475C-A8E5-0CD544D8DA8C}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 EndGlobal
