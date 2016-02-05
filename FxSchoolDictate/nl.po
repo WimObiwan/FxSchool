@@ -1,0 +1,79 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-02-05 21:33+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+
+#: Program.cs:103
+msgid "Answer: "
+msgstr "Antwoord: "
+
+#: Program.cs:121
+msgid "STOP!"
+msgstr "STOP!"
+
+#: Program.cs:126
+msgid "RIGHT!"
+msgstr "JUIST!"
+
+#: Program.cs:130
+#, csharp-format
+msgid "WRONG! The correct answer was {0}"
+msgstr "FOUT! Het juiste antwoord was {0}"
+
+#: Program.cs:134
+msgid "WRONG!"
+msgstr "FOUT!"
+
+#: Program.cs:143
+#, csharp-format
+msgid "Your score is now {0} / {1}"
+msgstr "Je score is nu {0} / {1}"
+
+#: Program.cs:154
+msgid "FxSchoolDictate 1.0"
+msgstr "FxSchoolDictate 1.0"
+
+#: Program.cs:158
+msgid "Configuration: "
+msgstr "Configuratie: "
+
+#: Program.cs:159
+#, csharp-format
+msgid "  * Attempts:   {0}"
+msgstr "  * Pogingen:    {0}"
+
+#: Program.cs:160
+#, csharp-format
+msgid "  * Language:   {0}"
+msgstr "  * Taal:        {0}"
+
+#: Program.cs:161
+#, csharp-format
+msgid "  * Dictionary: {0}"
+msgstr "  * Woordenboek: {0}"
+
+#: Program.cs:180
+#, csharp-format
+msgid "You made {0} mistake, which we will now repeat:"
+msgid_plural "You made {0} mistakes, which we will now repeat:"
+msgstr[0] "Je hebt {0} fout gemaakt, die nu herhaald wordt:"
+msgstr[1] "Je hebt {0} fouten gemaakt, die nu herhaald worden:"
+
+#: Program.cs:197
+msgid "No mistakes!"
+msgstr "Geen fouten!"

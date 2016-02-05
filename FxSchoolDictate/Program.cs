@@ -100,7 +100,7 @@ namespace FxSchoolDictate
 				bool rightInput = false;
 				do {
 					Dictate (task);
-					Console.Write (Catalog.GetString ("Antwoord: "));
+					Console.Write (Catalog.GetString ("Answer: "));
 					string input = Console.ReadLine ();
 					if (string.Compare (input, "stop", true) == 0) {
 						stop = true;
