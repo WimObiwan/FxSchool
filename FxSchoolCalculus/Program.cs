@@ -14,6 +14,7 @@ namespace Tafels
 	class MainClass
 	{
 		// Configuration
+		static string culture = "";
 		static int attempts = 3;
 		static bool allowAdd = true;
 		static bool allowSubtract = true;
@@ -43,6 +44,14 @@ namespace Tafels
 
 		delegate void GenerateExerciseHandler (out int number1, out char oper, out int number2, out int result,
 			out ValidQuestions validQuestions);
+
+		static string ReadConfiguration (string key, string def)
+		{
+			string val = ConfigurationManager.AppSettings [key];
+			if (!string.IsNullOrEmpty(val))
+				return val;
+			return def;
+		}
 
 		static int ReadConfiguration (string key, int def)
 		{
@@ -78,6 +87,7 @@ namespace Tafels
 
 		static void ReadConfiguration ()
 		{
+			culture = ReadConfiguration ("language", culture);
 			attempts = ReadConfiguration ("attempts", attempts);
 			allowAdd = ReadConfiguration ("allowAdd", allowAdd);
 			allowSubtract = ReadConfiguration ("allowSubtract", allowSubtract);
@@ -337,13 +347,20 @@ namespace Tafels
 		{
 			ReadConfiguration ();
 
-			Catalog.Init ("FxSchool", "./locale");
+			if (!string.IsNullOrWhiteSpace (culture)) {
+				Environment.SetEnvironmentVariable ("LANGUAGE", culture);
+				string culture2 = culture.Replace ('_', '-');
+				System.Threading.Thread.CurrentThread.CurrentCulture = System.Globalization.CultureInfo.GetCultureInfo (culture2);
+				System.Threading.Thread.CurrentThread.CurrentUICulture = System.Globalization.CultureInfo.GetCultureInfo (culture2);
+			}
 
+			Catalog.Init ("FxSchool", "./locale");
+	
 			string yes = Catalog.GetString ("yes");
 			string no = Catalog.GetString ("no");
 
 			Console.WriteLine (Catalog.GetString ("FxSchoolCalculus 1.0"));
-			Console.WriteLine ("(c) Copyright 2016 Fox Innovations / Wim Devos");
+			Console.WriteLine ("(c) Copyright 2016-2017 Fox Innovations / Wim Devos");
 			Console.WriteLine ("==============================================================================");
 
 			if ((allowAdd || allowSubtract || allowMultiply || allowDivide) == false) {
@@ -355,6 +372,7 @@ namespace Tafels
 			}
 				
 			Console.WriteLine (Catalog.GetString ("Configuration: "));
+			Console.WriteLine (Catalog.GetString ("  * Language:                {0}"), culture);
 			Console.WriteLine (Catalog.GetString ("  * Attempts:                {0}"), attempts);
 			Console.WriteLine (Catalog.GetString ("  * Add allowed:             {0}"), allowAdd ? yes : no);
 			Console.WriteLine (Catalog.GetString ("  * Subtract allowed:        {0}"), allowSubtract ? yes : no);
@@ -362,6 +380,7 @@ namespace Tafels
 			Console.WriteLine (Catalog.GetString ("  * Divide allowed:          {0}"), allowDivide ? yes : no);
 			Console.WriteLine (Catalog.GetString ("  * Multiply/divide maximum: {0}"), multiplicationMaximum);
 			Console.WriteLine (Catalog.GetString ("  * Multiply/divide tables:  {0}"), string.Join (", ", multiplicationTables));
+			Console.WriteLine (Catalog.GetString ("  * Valid positions:         {0}"), validPositions);
 			Console.WriteLine (Catalog.GetString ("  * Add/Subtract maximum:    {0}"), addMaximum);
 			Console.WriteLine (Catalog.GetString ("  * Benfold's-distribution:  {0}"), benfoldsDistribution ? yes : no);
 			Console.WriteLine ("==============================================================================");
