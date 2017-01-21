@@ -19,6 +19,7 @@ namespace Tafels
 		static bool allowSubtract = true;
 		static bool allowMultiply = true;
 		static bool allowDivide = true;
+		static int validPositions = 255;
 		static int multiplicationMaximum = 10;
 		static int addMaximum = 100;
 		static int[] multiplicationTables = new int[] { 0, 1, 2, 3, 4, 5, /*6, 7, 8, 9,*/ 10 };
@@ -82,6 +83,7 @@ namespace Tafels
 			allowSubtract = ReadConfiguration ("allowSubtract", allowSubtract);
 			allowMultiply = ReadConfiguration ("allowMultiply", allowMultiply);
 			allowDivide = ReadConfiguration ("allowDivide", allowDivide);
+			validPositions = ReadConfiguration ("validPositions", validPositions);
 			multiplicationMaximum = ReadConfiguration ("multiplicationMaximum", multiplicationMaximum);
 			addMaximum = ReadConfiguration ("addMaximum", addMaximum);
 			multiplicationTables = ReadConfiguration ("multiplicationTables", multiplicationTables);
@@ -227,6 +229,7 @@ namespace Tafels
 			}
 			do {
 				generateExercise (out number1, out oper, out number2, out result, out validQuestions);
+				validQuestions &= (ValidQuestions)validPositions;
 			} while (validQuestions == ValidQuestions.None);
 
 			ValidQuestions question = ValidQuestions.None;
